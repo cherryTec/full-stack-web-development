@@ -1,3 +1,4 @@
+
 tasks:
   - init: npm install    
     command: |
@@ -12,3 +13,6 @@ ports:
 
 
     
+vscode:
+  extensions:
+    - svelte.svelte-vscode
