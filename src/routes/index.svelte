@@ -46,7 +46,7 @@
 <div class="todos">
     <h1>{title}</h1>
 
-    <form action="" method="" class="new">
+    <form action="/todos.json" method="post" class="new">
         <input type="text" name="" aria-label="Add a todo" placeholder="+ type to add todo">
     </form>
 
