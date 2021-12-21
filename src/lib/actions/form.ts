@@ -1,4 +1,4 @@
-export const enhance = (form: HTMLFieldSetElement, {
+export const enhance = (form: HTMLFormElement, {
        result
 }) => {
 
