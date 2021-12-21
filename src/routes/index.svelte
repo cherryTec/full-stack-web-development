@@ -1,5 +1,6 @@
 <script context="module" lang="ts">
    import type { Load } from "@sveltejs/kit";
+   import { enhance }  from "$lib/actions/form";
    export const load: Load = async ({ fetch }) => {
        const res = await fetch("/todos.json")
        
@@ -23,6 +24,11 @@
     export let todos: Todo[];
     
     const title  = "Todo | New";
+
+    const processNewTodoResult = async (res: Response) => {
+       const newTodo = await res.json();
+       todos = [...todos, newTodo];
+    }
     
 </script>
 
@@ -67,7 +73,9 @@
 <div class="todos">
     <h1>{title}</h1>
 
-    <form action="/todos.json" method="post" class="new">
+    <form action="/todos.json" method="post" class="new" use:enhance={{
+        result: processNewTodoResult
+    }}>
         <input type="text" name="text" aria-label="Add a todo" placeholder="+ type to add todo">
     </form>
 
