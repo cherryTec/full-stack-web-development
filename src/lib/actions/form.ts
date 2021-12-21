@@ -16,7 +16,7 @@ export const enhance = (form: HTMLFormElement, {
             });
 
             if (res.ok) {
-                console.log(result(res));
+                
                 result(res);
             } else {
                 console.error("Fetch error:", await res.text());
